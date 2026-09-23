@@ -1,87 +1,52 @@
-# QuickTicket Support System
+# Task Management API
 
-A simple and fast support ticket system built with **Next.js 14**, **TypeScript**, **Prisma ORM**, **Neon Postgres** database, and **Sentry** for error tracking and performance monitoring.
+Yazılım şirketleri içerisindeki görevlerin ve çalışanlara atanmış sorumlulukların takip edilmesini sağlayan REST API tabanlı backend uygulamasıdır.
 
-<img src="/public/screen.png" alt="QuickTicket Screenshot" width="600" />
-
----
-
-## ✨ Features
-
-- Create, view, and manage support tickets
-- User authentication with JWT tokens
-- Track errors and performance using Sentry
-- Responsive design with Tailwind CSS
-- Secure session handling with HttpOnly cookies
-- Built with modern Next.js App Router & Server Actions
+Proje Node.js ve Express.js kullanılarak geliştirilmiş, verilerin saklanması için MySQL veritabanı kullanılmıştır.
 
 ---
 
-## 🚀 Technologies
+## Proje Amacı
 
-- **Next.js 14 (App Router)**
-- **TypeScript**
-- **Prisma ORM**
-- **Neon.tech (Postgres Database)**
-- **Tailwind CSS**
-- **Sentry (Error & Performance Monitoring)**
+Sistemin amacı;
+
+- Görev oluşturmak
+- Görevleri çalışanlara atamak
+- Görevleri listelemek
+- Görev detaylarını görüntülemek
+- Görevleri güncellemek
+- Görevleri silmek
+- Görev durumlarını takip etmek
+- Görev önceliklerini yönetmek
+- Görevleri filtrelemek
+- Temel görev raporları oluşturmak
+
+işlemlerini REST API üzerinden gerçekleştirmektir.
 
 ---
 
-## 📦 Installation & Setup
+## Kullanılan Teknolojiler
 
-Clone the repository:
+- Node.js
+- Express.js
+- MySQL
+- mysql2
+- JavaScript
+- dotenv
+- Postman
 
-```bash
-git clone https://github.com/bradtraversy/quick-ticket
-cd quickticket
-```
+---
 
-Install dependencies:
+## Gereksinimler
 
-```bash
-npm install
-```
+Projeyi çalıştırmak için aşağıdaki yazılımların bilgisayarda kurulu olması gerekir:
 
-#### Sentry Setup
+- Node.js
+- npm
+- MySQL
+- Postman (API testleri için)
 
-Create a new Sentry Project and run the Wizard command it gives you. This will create a new .env-sentry-plugin file. Rename it to .env. This will have your Sentry Auth Token in it.
-
-#### Neon Database Setup
-
-Create a Neon Postgres database and add the connection string to your .env file:
-
-```bash
-DATABASE_URL="postgresql://<username>:<password>@<host>:<port>/<database>?sslmode=require"
-```
-
-#### Auth Setup
-
-Add an auth secret to your .env file. You can run the following command to generate one:
+Node.js kurulumundan sonra aşağıdaki komut ile Node.js'in kurulu olduğu kontrol edilebilir:
 
 ```bash
-openssl rand -hex 32
-```
-
-Then add it to your .env file:
-
-```bash
-NEXTAUTH_SECRET="<your_secret>"
-```
-
-#### Prisma Setup
-
-Run the following command to generate the Prisma client and create the database tables:
-
-```bash
-npx prisma migrate dev --name init
-npx prisma generate
-```
-
-#### Run the App
-
-Run the development server:
-
-```bash
-npm run dev
-```
+node -v
